@@ -1,0 +1,9 @@
+<view class="container">
+  <view class="loading-wrap" s-if="{{newsList.length === 0}}">
+    <image src="/images/loading.png" class="loading-img"></image>
+  </view>
+  <view class="news-list">
+    <block s-for="{{newsList}}">
+    </block>
+  </view>
+</view>

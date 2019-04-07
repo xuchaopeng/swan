@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#F44B50",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "东方头条",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#F44B50",
+    "borderStyle": "white",
+    "backgroundColor": "#F9F9F9",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/news_a.png",
+        "selectedIconPath": "images/news_b.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/detail/detail",
+        "iconPath": "images/video_a.png",
+        "selectedIconPath": "images/video_b.png",
+        "text": "详情"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

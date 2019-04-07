@@ -1,0 +1,291 @@
+.container {
+  margin-top: 76rpx;
+}
+/* common */
+.img-bg {
+  background-color: rgba(150, 150, 150, 0.1);
+  background-image: url(https://mini.eastday.com/toutiaoh5/img/img_preview.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+.one-px-border {
+  margin: 0 30rpx;
+  position: relative;
+  border: none;
+}
+.big-border {
+  border: 10px solid red;
+  background: red;
+}
+.one-px-border:after{
+  content: '';
+  position: absolute;
+  bottom: -1rpx;
+  background: #e5e5e5;
+  width: 100%;
+  height: 1px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+.news-item:first-child .one-px-border:after {
+  height: 0;
+}
+
+.tags {
+  margin-top: 12rpx;
+  color: #999;
+  overflow: hidden;
+  font-size: 0;
+}
+
+.tags .tag {
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 10rpx;
+}
+
+.tags .tag:last-child {
+  margin-right: 0;
+}
+
+.tags .tag-zd,
+.tags .tag-rec,
+.tags .tag-hot,
+.tags .tag-video,
+.tags .tag-gg {
+  display: inline-block;
+  text-align: center;
+  margin-right: 10rpx;
+  color: #2a90d7;
+}
+
+.tags .tag-hot {
+  color: #f85959;
+}
+
+.tags .tag-gg {
+  color: #999;
+}
+
+.tags .tag-rec,
+.tags .tag-video {
+  color: #2a90d7;
+}
+
+.tags .tag-zd {
+  width: 23rpx;
+  color: #f00;
+}
+
+.news-link {
+  padding: 30rpx;
+}
+
+/* 纯文字 三图 大图 */
+
+.news-txt .title,
+.news-img3 .title,
+.news-img-lg .title {
+  color: #222222;
+  font-size: 34rpx;
+  line-height: 42rpx;
+  overflow: hidden;
+}
+
+/* 单图 */
+
+.news-img1 .info {
+  display: inline-block;
+  width: 67%;
+  vertical-align: middle;
+}
+
+.news-img1 .info .title {
+  color: #222222;
+  font-size: 34rpx;
+  line-height: 42rpx;
+  overflow: hidden;
+  margin-right: 24rpx;
+}
+
+.news-img1 .img {
+  overflow: hidden;
+  width: 33%;
+  height: 148rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.news-img1 .img .image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 三图 */
+
+.news-img3 .img {
+  margin-top: 12rpx;
+}
+
+.news-img3 .img .img-wrap {
+  display: inline-block;
+  overflow: hidden;
+  width: 33.3%;
+  height: 148rpx;
+  box-sizing: border-box;
+  padding-right: 4rpx;
+}
+
+.news-img3 .img .img-wrap .image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 大图 */
+
+.news-img-lg .img {
+  overflow: hidden;
+  margin-top: 12rpx;
+  width: 100%;
+  height: 340rpx;
+  position: relative;
+  min-height: 340rpx;
+}
+
+.news-img-lg .img .image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 大图 - 图片新闻 */
+
+.news-picnews .num {
+  position: absolute;
+  right: 10rpx;
+  bottom: 10rpx;
+  padding: 10rpx 16rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 30rpx;
+  color: #fff;
+  font-size: 24rpx;
+}
+
+/* 视频 */
+
+.news-video .img {
+  position: relative;
+}
+.video-info {
+  width: 100%;
+  height: auto;
+  display: block;
+  font-size: 34rpx;
+}
+.video-img {
+  width: 100%;
+  height: 345rpx;
+  position: relative;
+  margin-top: 12rpx;
+  margin-bottom: 12rpx;
+}
+
+.video-img image {
+  width: 100%;
+  height: 100%;
+}
+.video-img .video-btn {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIQAAACEBAMAAACjap6UAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAwUExURQAAAAAAAP///////1JSUv///////7+/v+jo6P39/aampv///////////+fn55aWlqDnGJgAAAAQdFJOU00A/oJRan2iSVtNdSoQ0YJaJIZgAAADm0lEQVRo3u3aS0sbURQA4LsYSMxGshASOtncTXdxETIYksIsFKqLQogJiu6GSH1B6C+IWAvpA5TEEKSFLERauyqiSLWLECItXQVBWroT123pDyidmc6kSeY+9Wg3nnX4mDvnzMy95wQFrxzolrgpIvKxlD0wtMVs7Xn7UoRa2otpR1kzjoxYstaQJiIlQ8vWdrdHzZjYLWUNrdaWI75ktOmno6gTo683jfgLGeKTkd/SUU8ob3LaS3GiFZveRp6Y2IzNihItbUpHhFDWjFkxoqVtEQVrMSTDS3ylCrbxik+EjCmqYK1FW+ERkcwhQzCNZ/E2hzhJ1BEzAuUlNhFOVhAn7u9tsIhIZgpxY61vKb3EN94y7KVUP9AJda6CBGJ8rkElmuxs/MtKikaoySISCv9eg0I0D5Fg9FwGusRF9F1GF3EmfBHmZSyTiMhBUZzwL7YJxNC8Lk4o1TSBKFeQRIwnvIQar8sQgUzDQ5y9R1LxdtlD5IpyhD/fT4QSuhyhlFf6CNl1dK3EJcpFWcKf6CXUuC5LKG5OHGLoIZKOJ+keolmRJ8ZTPUTOU1e+Are6FrsJ1ZtSX/QnN62NLmJowfMDH47y7vBOuotoThIIfJdDjKW6CEJVmAQeFqoMm4jkdQLxHeMf7JuRa3eIUAIRiMIvjC+Yxt/HBFHupkWgRxgX+PfTJk4nyYRyjpmpHbvXIVbXyQQaPGemdmCkQ1TrFAINMlMbmO8QhIQ4BLs8lJxLqISEuAR6wEqtXeIWERphEOg3I7WrKw4RXmARrNTubDjEnUkmYaYWU1I79s4hTtmEXR46vTAsornOJuipHUg5xGqRQ1BT6x9xiTqPoKU24BJVPkFJrV2eFjEjQJBTG9h3CV2AsAxPahs-2BciSE++MuMQeSGC9OTbz5kEQUhth4gLEt7UKhk4AmAhorcT4yiiEOJJ1WlJBSgtgAIHeMwAHnaAVw7Ai4/3+h3kv375H4Eo7yMA8CkC+CACfJY5m4Nhgc0BY4viE92iAGyUALZrAJtG+ta1ILp1pW6gL4Q30ADbeIjDBMCRBuBgFTy48vEO4pAJcNQFOHADHPshmg8ALRCARgxEO0iyKaUQmlIArTGIBh1AmxCgWQnRMgVo3EK0jwGa2BCt9ODneaGG/vH1jhWC4eTjKw43gsET3lIC1aXrH/QAjJsghl4QozezOugDwOObG0NCDEMhRrIQg2GI8TTIkPz2Pwf/h/gD56UtyQp2vzUAAAAASUVORK5CYII=)
+    no-repeat center center;
+  background-size: 100rpx;
+}
+
+.loading-img-wrap {
+  width: 750rpx;
+  height: 1334rpx;
+}
+
+.loading-img {
+  width: 100%;
+  height: 100%;
+}
+.receiveSharing{
+  width: 690rpx;
+  height: auto;
+  background: #ffffff;
+  margin: 30rpx;
+  padding-bottom: 30rpx;
+}
+.receiveBox{
+  width: 100%;
+  height: auto;
+  background: #e8e8e8;
+  overflow: hidden;
+}
+.sharePerson{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 28rpx;
+  color: #666666;
+  padding: 0 15rpx;
+  box-sizing: border-box;
+}
+.sharePerson .shareName{
+  font-weight: 500;
+  color: #222222;
+  margin: 0 10rpx 0 14rpx;
+}
+.sharePerson image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.receiveSharing .shareImg{
+  width: 100%;
+  height: 388rpx;
+  margin-bottom: 30rpx;
+}
+.receiveSharing .shareImg image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.receiveSharing .shareTitle{
+  width: 100%;
+  height: auto;
+  font-size: 40rpx;
+  color: #222222;
+  line-height: 52rpx;
+  padding: 0 35rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.receiveSharing .shareMessage{
+  padding: 0 35rpx;
+  box-sizing: border-box;
+  font-size: 24rpx;
+  color: #999999;
+  font-weight: 400;
+}
+.receiveSharing .shareMessage .shareNumber{
+  margin-left: 12rpx;
+}

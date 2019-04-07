@@ -1,0 +1,162 @@
+<scroll-view id="J_channels_list" class="channels-list" scroll-x="{{true}}" scroll-with-animation="{{true}}" scroll-left="{{scrollLeft}}">
+  <block s-for="{{channels}}" s-for-index="channels">
+    <view id="{{item.name}}" data-index="{{index}}" class="channels-item  {{item.active ? 'active' : ''}}" data-type="{{item.name}}"
+      bindtap="bindChannelsClick">
+      {{item.value}}
+    </view>
+  </block>
+</scroll-view>
+
+<view class="container">
+  <view class="loading-wrap" s-if="{{newsList.length === 0}}">
+    <image src="/images/loading.png" class="loading-img"></image>
+  </view>
+  <view class="news-list">
+    <block s-for="{{newsList}}">
+     <!-- 大图 - 普通新闻 -->
+      <view s-if="{{item.ispicnews == '1'}}" class="news-item news-img-lg">
+        <view data-url="{{item.url}}" data-type="{{item.type}}" data-subtype="{{item.subtype}}" data-ishot="{{item.hotnews}}" data-recommendtype="{{item.recommendtype}}"
+          bindtap="bindNewsTap" class="news-link">
+          <view class="info">
+            <text class="title dotdot line3">{{item.topic}}</text>
+          </view>
+          <view class="img img-bg">
+            <image class="image" mode="aspectFill" src="{{item.lbimg[0].src}}"></image>
+          </view>
+          <view class="tags">
+            <!-- 热门 -->
+            <block s-if="{{item.hotnews == '1'}}">
+              <text class="tag tag-hot">热门</text>
+              <!-- 视频 -->
+              <text s-if="{{item.isvideo == '1'}}" class="tag tag-video">视频</text>
+            </block>
+            <!-- 推荐 -->
+            <text s-elif="{{item.isrecom == '1'}}" class="tag tag-rec">推荐</text>
+            <text s-else class="tag tag-time">{{item.date}}</text>
+            <text class="tag tag-src">{{item.source}}</text>
+            <block s-if="{{item.urlpv != '0'}}">
+              <text s-if="{{item.comment_count !== '0'}}" class="tag tag-com">
+                {{item.comment_count}}评
+              </text>
+              <text class="tag tag-view">{{item.urlpv}}阅读</text>
+            </block>
+          </view>
+        </view>
+      </view>
+      <!-- 视频 -->
+      <view s-elif="{{item.isvideo == '1' || item.videonews == '1' || item.videonews == '2'}}" class="news-item news-img1 news-video">
+        <view data-ctg="video" data-url="{{item.url}}" bindtap="bindNewsTap" class="news-link">
+          <view class="video-info">
+            <text class="title dotdot line3">{{item.topic}}</text>
+          </view>
+          <view class="video-img">
+            <image class="image" mode="aspectFill" src="{{item.lbimg[0].src}}"></image>
+            <view class="video-btn"></view>
+          </view>
+          <view class="tags">
+            <text class="tag tag-src">{{item.source}}</text>
+            <block s-if="{{item.urlpv != '0'}}">
+              <text class="tag tag-view">{{item.urlpv}}阅读</text>
+            </block>
+          </view>
+        </view>
+      </view>
+      <!-- 大图 - 图片新闻 -->
+      <view s-elif="{{item.ispicnews == '2'}}" class="news-item news-img-lg news-picnews">
+      </view>
+      <!-- 纯文字 -->
+      <view s-elif="{{item.ispicnews == '-1'}}" class="news-item news-txt">
+        <view data-url="{{item.url}}" data-type="{{item.type}}" data-subtype="{{item.subtype}}" data-ishot="{{item.hotnews}}" data-recommendtype="{{item.recommendtype}}"
+          bindtap="bindNewsTap" class="news-link">
+          <text class="title dotdot line3">{{item.topic}}</text>
+          <view class="tags">
+            <!-- 热门 -->
+            <block s-if="{{item.hotnews == '1'}}">
+              <text class="tag tag-hot">热门</text>
+              <!-- 视频 -->
+              <text s-if="{{item.isvideo == '1'}}" class="tag tag-video">视频</text>
+            </block>
+            <!-- 推荐 -->
+            <text s-elif="{{item.isrecom == '1'}}" class="tag tag-rec">推荐</text>
+            <text s-else class="tag tag-time">{{item.date}}</text>
+            <text class="tag tag-src">{{item.source}}</text>
+            <block s-if="{{item.urlpv != '0'}}">
+              <text s-if="{{item.comment_count !== '0'}}" class="tag tag-com">
+                {{item.comment_count}}评
+              </text>
+              <text class="tag tag-view">{{item.urlpv}}阅读</text>
+            </block>
+          </view>
+        </view>
+      </view>
+      <!-- 三图 -->
+      <view s-elif="{{item.miniimg.length >= 3}}" class="news-item news-img3">
+        <view data-url="{{item.url}}" data-type="{{item.type}}" data-subtype="{{item.subtype}}" data-ishot="{{item.hotnews}}" data-recommendtype="{{item.recommendtype}}"
+          bindtap="bindNewsTap" class="news-link">
+          <view class="info">
+            <text class="title dotdot line3">{{item.topic}}</text>
+          </view>
+          <view class="img">
+            <view class="img-wrap img-bg">
+              <image class="image" mode="aspectFill" src="{{item.miniimg[0].src}}"></image>
+            </view>
+            <view class="img-wrap img-bg">
+              <image class="image" mode="aspectFill" src="{{item.miniimg[1].src}}"></image>
+            </view>
+            <view class="img-wrap img-bg">
+              <image class="image" mode="aspectFill" src="{{item.miniimg[2].src}}"></image>
+            </view>
+          </view>
+          <view class="tags">
+            <!-- 热门 -->
+            <block s-if="{{item.hotnews == '1'}}">
+              <text class="tag tag-hot">热门</text>
+              <!-- 视频 -->
+              <text s-if="{{item.isvideo == '1'}}" class="tag tag-video">视频</text>
+            </block>
+            <!-- 推荐 -->
+            <text s-elif="{{item.isrecom == '1'}}" class="tag tag-rec">推荐</text>
+            <text s-else class="tag tag-time">{{item.date}}</text>
+            <text class="tag tag-src">{{item.source}}</text>
+            <block s-if="{{item.urlpv != '0'}}">
+              <text s-if="{{item.comment_count !== '0'}}" class="tag tag-com">
+                {{item.comment_count}}评
+              </text>
+              <text class="tag tag-view">{{item.urlpv}}阅读</text>
+            </block>
+          </view>
+        </view>
+      </view>
+      <!-- 单图 -->
+      <view s-elif="{{item.miniimg.length >= 1}}" class="news-item news-img1">
+        <view data-url="{{item.url}}" data-type="{{item.type}}" data-subtype="{{item.subtype}}" data-ishot="{{item.hotnews}}" data-recommendtype="{{item.recommendtype}}"
+          bindtap="bindNewsTap" class="news-link">
+          <view class="info">
+            <text class="title dotdot line3">{{item.topic}}</text>
+            <view class="tags">
+              <!-- 热门 -->
+              <block s-if="{{item.hotnews == '1'}}">
+                <text class="tag tag-hot">热门</text>
+                <!-- 视频 -->
+                <text s-if="{{item.isvideo == '1'}}" class="tag tag-video">视频</text>
+              </block>
+              <!-- 推荐 -->
+              <text s-elif="{{item.isrecom == '1'}}" class="tag tag-rec">推荐</text>
+              <text s-else class="tag tag-time">{{item.date}}</text>
+              <text class="tag tag-src">{{item.source}}</text>
+              <block s-if="{{item.urlpv != '0'}}">
+                <text s-if="{{item.comment_count !== '0'}}" class="tag tag-com">
+                  {{item.comment_count}}评
+                </text>
+                <text class="tag tag-view">{{item.urlpv}}阅读</text>
+              </block>
+            </view>
+          </view>
+          <view class="img img-bg">
+            <image class="image" mode="aspectFill" src="{{item.miniimg[0].src}}"></image>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
