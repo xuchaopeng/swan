@@ -1,6 +1,8 @@
 module.exports = {
   qid: 'baidu',
-  refreshUrl: 'https://toutiao.eastday.com/toutiao_h5/RefreshJP',//新聞接口
+  refreshUrl: 'https://toutiao.eastday.com/toutiao_h5/RefreshJP', //新聞接口
+  pullUpUrl: 'https://toutiao.eastday.com/toutiao_h5/NextJP',
+  pullDownUrl: 'https://toutiao.eastday.com/toutiao_h5/pulldown',
   channels: {
     up: [
       {
@@ -46,4 +48,4 @@ module.exports = {
       }
     ]
   }
-}
+};

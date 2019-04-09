@@ -19,11 +19,51 @@ function loadNews(channel = 'toutiao') {
     pgnum: 1,
     os: 'iOS 10.0.1'
   }).then(res => {
-    console.log('tuqian', res);
+    return res;
+  });
+}
+/**
+ * 上拉加载新闻
+ * @param {Object} 请求参数对象
+ */
+function loadNewsByPullUp({ channel, startkey, pgnum, idx }) {
+  return WxRequest.req(Config.pullUpUrl, {
+    type: channel,
+    startkey: startkey,
+    newsnum: 20,
+    qid: Config.qid,
+    readhistory: '',
+    idx: idx || 1,
+    recgid: uid,
+    pgnum: pgnum,
+    os: 'iOS 10.0.1'
+  }).then(res => {
+    return res;
+  });
+}
+/**
+ * 下拉加载新闻
+ * @param {Object} 请求参数对象
+ */
+function loadNewsByPullDown({ channel, startkey, lastkey, pgnum, idx }) {
+  return WxRequest.req(Config.pullDownUrl, {
+    type: channel,
+    startkey: startkey,
+    lastkey: lastkey,
+    pgnum: pgnum || -1,
+    zdnews: '',
+    idx: '' + (idx || 0),
+    readhistory: '',
+    recgid: uid,
+    qid: Config.qid,
+    os: 'iOS 10.0.1'
+  }).then(res => {
     return res;
   });
 }
 
 module.exports = {
-  loadNews
-}
+  loadNews,
+  loadNewsByPullDown,
+  loadNewsByPullUp
+};

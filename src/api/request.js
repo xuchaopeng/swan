@@ -11,7 +11,7 @@ function req(url, data, method = 'GET') {
       data: data,
       method: method,
       dataType: 'json',
-      success: function (res) {
+      success: function(res) {
         try {
           var d = res.data;
           if (typeof d == 'string') {
@@ -28,13 +28,13 @@ function req(url, data, method = 'GET') {
           reject(e);
         }
       },
-      error: function (res) {
+      error: function(res) {
         reject(res);
       }
-    })
-  })
+    });
+  });
 }
 
 module.exports = {
   req
-}
+};
