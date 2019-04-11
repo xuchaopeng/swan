@@ -1,8 +1,5 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/video/video"
-  ],
+  "pages": ["pages/index/index", "pages/ndetail/ndetail", "pages/video/video", "pages/nvideo/nvideo"],
   "window": {
     "navigationBarBackgroundColor": "#F44B50",
     "navigationBarTextStyle": "white",

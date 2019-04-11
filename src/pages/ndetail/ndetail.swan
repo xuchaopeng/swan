@@ -1,0 +1,32 @@
+<swiper indicator-dots="true"
+    autoplay="true" interval="3000" duration="500">
+    <block s-for="imgUrl in imgs">
+        <swiper-item>
+            <image src="{{imgUrl}}" class="slide-image" width="355" height="150"/>
+        </swiper-item>
+    </block>
+</swiper>
+
+<view class="detail-title">
+  {{uk}}
+</view>
+
+<view class="movable-view">
+    <movable-area style="height: 200px;width: 100%;background: pink;">
+        <movable-view style="height: 40px; width: 40px; background: black;" x="30" y="30" direction="all">
+        </movable-view>
+    </movable-area>
+</view>
+
+<video id="myVideo"
+    src="https://vd3.bdstatic.com/mda-ia8e6q3g23py8qdh/hd/mda-ia8e6q3g23py8qdh.mp4?playlist=%5B%22hd%22%5D&auth_key=1521549485-0-0-d5d042ba3555b2d23909d16a82916ebc&bcevod_channel=searchbox_feed&pd=share"
+    controls>
+    <cover-view class="controls">
+        <cover-image class="play"
+            bindtap="play"
+            src="https://smartprogram.baidu.com/docs/img/logo.png">
+        </cover-image>
+        <cover-view class="pause" bindtap="pause">暂停</cover-view>
+        <cover-view class="time">00:00</cover-view>
+    </cover-view>
+</video>

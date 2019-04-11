@@ -43,15 +43,9 @@ Page({
     const { type, url, ishot, recommendtype, ctg } = e.currentTarget.dataset;
     let urlid = url.substring(url.lastIndexOf('/') + 1, url.length - 5);
     if (ctg == 'video') {
-      // swan.navigateTo({
-      //   url: `../video/vdetails/vdetails?url=${urlid}&type=${type}&f=${type}`
-      // });
     } else {
-      // swan.navigateTo({
-      //   url: `ndetails/ndetails?url=${urlid}&type=${type}&ishot=${ishot}&recommendtype=${recommendtype}&f=${type}`
-      // });
       swan.navigateTo({
-        url: 'http://mini.eastday.com/a/190409132314912.html'
+        url: `../ndetail/ndetail?url=${urlid}&type=${type}&ishot=${ishot}&recommendtype=${recommendtype}&f=${type}`
       });
     }
   },

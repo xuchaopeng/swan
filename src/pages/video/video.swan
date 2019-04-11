@@ -1,9 +1,13 @@
+<view>
+  {{name}}
+</view>
 <view class="container">
   <view class="loading-wrap" s-if="{{newsList.length === 0}}">
     <image src="/images/loading.png" class="loading-img"></image>
   </view>
   <view class="news-list">
     <block s-for="{{newsList}}">
+      <view bindtap="bindVideoPage" data-uk="{{item.uk}}">{{item.title}}</view>
     </block>
   </view>
 </view>
