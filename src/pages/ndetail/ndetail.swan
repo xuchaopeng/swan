@@ -7,6 +7,13 @@
     </block>
 </swiper>
 
+<view>
+  劲风装卸服务
+  签名： 货物装卸,人工搬运
+  账号：丰城市尚庄街道春龙装卸服务部
+  信贷：92360981MA38DTGW32
+</view>
+
 <view class="detail-title">
   {{uk}}
 </view>
